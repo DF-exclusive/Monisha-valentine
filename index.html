@@ -100,6 +100,10 @@ button:hover {
 </head>
 
 <body>
+  <audio id="bgMusic" loop>
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
 
 <div class="container">
   <h1>Monisha ❤️</h1>
@@ -153,6 +157,11 @@ setInterval(() => {
 
   setTimeout(() => heart.remove(), 7000);
 }, 280);
+  document.addEventListener("click", () => {
+  const music = document.getElementById("bgMusic");
+  if (music) music.play();
+}, { once: true });
+
 </script>
 
 </body>
