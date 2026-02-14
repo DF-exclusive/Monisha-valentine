@@ -160,6 +160,17 @@ setInterval(() => {
   const music = document.getElementById("bgMusic");
   if (music) music.play();
 }, { once: true });
+  document.addEventListener("visibilitychange", () => {
+  const music = document.getElementById("bgMusic");
+  if (!music) return;
+
+  if (document.hidden) {
+    music.pause();   // stop music when tab/app goes background
+  } else {
+    music.play();    // resume music when user comes back
+  }
+});
+
 
 </script>
 
